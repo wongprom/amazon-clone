@@ -4,8 +4,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 import './Header.css';
+import { useStateValue } from '../globalState/StateProvider';
 
 const Header = () => {
+  const [{ basket }, reducer] = useStateValue();
+
   return (
     <div className="header">
       <Link to="/">
@@ -37,7 +40,7 @@ const Header = () => {
           <div className="header__optionBasket">
             <ShoppingBasketIcon />
             <span className="header__optionLineTwo header__basketCount" header>
-              0
+              {basket?.length}
             </span>
           </div>
         </Link>
