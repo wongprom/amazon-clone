@@ -1,23 +1,25 @@
 import React from 'react';
 import './Product.css';
+import StarsIcon from '@material-ui/icons/Stars';
 
-const Product = () => {
+const Product = ({ id, title, image, price, rating }) => {
   return (
     <div className="product">
       <div className="product__info">
-        <p>The Lean Startup:</p>
+        <p>{title}</p>
         <p className="product__price">
           <small>$</small>
-          <strong>11.99</strong>
+          <strong>{price}</strong>
         </p>
         <div className="product__rating">
-          <p>🔆</p>
+          {Array(rating)
+            .fill()
+            .map((_, i) => (
+              <StarsIcon color="secondary" />
+            ))}
         </div>
       </div>
-      <img
-        src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
-        alt="book"
-      />
+      <img src={image} alt="book" />
       <button>Add to Basket</button>
     </div>
   );
