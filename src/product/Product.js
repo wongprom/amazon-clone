@@ -33,7 +33,7 @@ const Product = ({ id, title, image, price, rating }) => {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <StarsIcon color="secondary" />
+              <StarsIcon key={i} color="secondary" />
             ))}
         </div>
       </div>
