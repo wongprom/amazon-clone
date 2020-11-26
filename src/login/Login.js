@@ -10,18 +10,22 @@ const Login = () => {
 
   const signIn = (e) => {
     e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          history.push('/');
+        }
+      })
+      .catch((error) => console.error('could not log in ', error.message));
   };
   const register = (e) => {
     e.preventDefault();
-    console.log('e', e);
+
     // firebase things
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        console.log(
-          '🚀 ~ file: Login.js ~ line 17 ~ auth.createUserWithEmailAndPassword ~ auth',
-          auth
-        );
         if (auth) {
           // redirecte to url "/" if success
           history.push('/');
