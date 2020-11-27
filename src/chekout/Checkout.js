@@ -5,8 +5,7 @@ import CheckoutProduct from './CheckoutProduct';
 import { useStateValue } from '../globalState/StateProvider';
 
 const Checkout = () => {
-  const [{ basket }, dispatch] = useStateValue();
-  console.log('🚀 ~ file: Checkout.js ~ line 9 ~ Checkout ~ basket', basket);
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout">
@@ -16,6 +15,7 @@ const Checkout = () => {
           src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
         />
         <div>
+          <h3>Hello, {user ? user.email : 'Guest'}</h3>
           <h2 className="checkout__title"> Yor shopping basket</h2>
           {basket?.map(({ id, image, title, price, rating }) => (
             <CheckoutProduct
