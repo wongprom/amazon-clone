@@ -1,4 +1,5 @@
 import React from 'react';
+import FlipMove from 'react-flip-move';
 import './Checkout.css';
 import Subtotal from '../subtotal/Subtotal';
 import CheckoutProduct from './CheckoutProduct';
@@ -17,16 +18,22 @@ const Checkout = () => {
         <div>
           <h3>Hello, {user ? user.email : 'Guest'}</h3>
           <h2 className="checkout__title"> Yor shopping basket</h2>
-          {basket?.map(({ id, image, title, price, rating }) => (
-            <CheckoutProduct
-              key={id}
-              title={title}
-              price={price}
-              rating={rating}
-              image={image}
-              id={id}
-            />
-          ))}
+          <FlipMove
+            leaveAnimation="fade"
+            duration="700"
+            maintainContainerHeight
+          >
+            {basket?.map(({ id, title, price, rating, image }) => (
+              <CheckoutProduct
+                key={id}
+                title={title}
+                price={price}
+                rating={rating}
+                image={image}
+                id={id}
+              />
+            ))}
+          </FlipMove>
         </div>
       </div>
 

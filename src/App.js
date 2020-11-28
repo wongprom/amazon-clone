@@ -9,7 +9,10 @@ import { auth } from './firebase/firebase';
 import { useStateValue } from './globalState/StateProvider';
 
 import './App.css';
-
+/**
+ * todo - Add uuid for items in basket, otherwise error from <FlipMove />
+ * todo - Better animations <FlipMove />
+ */
 function App() {
   const [{ basket, user }, dispatch] = useStateValue();
 
