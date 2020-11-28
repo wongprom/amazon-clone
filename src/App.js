@@ -5,10 +5,12 @@ import Header from './header/Header';
 import Home from './home/Home';
 import Checkout from './chekout/Checkout';
 import Login from './login/Login';
+
 import { auth } from './firebase/firebase';
 import { useStateValue } from './globalState/StateProvider';
 
 import './App.css';
+import Payment from './payment/Payment';
 /**
  * todo - Add uuid for items in basket, otherwise error from <FlipMove />
  * todo - Better animations <FlipMove />
@@ -44,6 +46,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route path="/">
             <Header />
