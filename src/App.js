@@ -7,6 +7,7 @@ import Header from './header/Header';
 import Home from './home/Home';
 import Checkout from './chekout/Checkout';
 import Login from './login/Login';
+import Orders from './orders/Orders';
 
 import { auth } from './firebase/firebase';
 import { useStateValue } from './globalState/StateProvider';
@@ -47,8 +48,12 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/login">
-            <Login>Login</Login>
+            <Login />
           </Route>
           <Route path="/checkout">
             <Header />

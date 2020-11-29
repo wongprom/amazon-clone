@@ -5,6 +5,7 @@ import { getBasketTotal } from '../globalState/reducer';
 import CheckoutProduct from '../chekout/CheckoutProduct';
 import { useStateValue } from '../globalState/StateProvider';
 import axios from '../axios';
+import { db } from '../firebase/firebase';
 
 import './Payment.css';
 
@@ -49,9 +50,24 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
+
+        //save order to firebase db
+        db.collection('users')
+          .doc(user?.uid)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+        dispatch({
+          type: 'EMPTY_BASKET',
+        });
         history.replace('/orders');
       });
   };
