@@ -1,6 +1,8 @@
 # FIREBASE
 
-Website --> [Amazone - clone](https://clone-f609f.web.app)
+Wesite --> [Amazone - clone](https://clone-f609f.web.app)
+
+[Stripe Payment](https://stripe.com/en-se)
 
 # Getting Started with Create React App
 
