@@ -13,6 +13,15 @@ const Home = () => {
         />
         <div className="home__row">
           <Product
+            id="1236456434"
+            title="Apple iMac 21.5in 2.7GHz Core i5 (ME086LL/A) All In One Desktop, 8GB Memory, 1TB Hard Drive, Mac OS X Mountain Lion (Renewed)"
+            price={699.99}
+            rating={5}
+            image="https://m.media-amazon.com/images/I/71pheYd9W0L._AC_UY218_.jpg"
+          />
+        </div>
+        <div className="home__row">
+          <Product
             id="12321341"
             title="The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses"
             price={23.33}
@@ -50,6 +59,24 @@ const Home = () => {
             image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
           />
         </div>
+
+        <div className="home__row">
+          <Product
+            id="23445930675"
+            title="Adjustable Laptop Stand, FLOPAD Ergonomic Standing Desk with Heat-Vent, Laptop Riser with Anti-Slip Silicone, Compatible with 10-17”, MacBook Pro/Air, Dell, HP, Lenovo, and Surface Laptops, (Silver)"
+            price={49.99}
+            rating={4}
+            image="https://m.media-amazon.com/images/I/61mxdHpekNL._AC_UY218_.jpg"
+          />
+          <Product
+            id="325435654345"
+            title="iFixit Mako Driver Kit - 64 Precision Bits for Electronics Repair"
+            price={59.99}
+            rating={3}
+            image="https://m.media-amazon.com/images/I/91eDwgaJQNL._AC_UY218_.jpg"
+          />
+        </div>
+
         <div className="home__row">
           <Product
             id="90829332"
